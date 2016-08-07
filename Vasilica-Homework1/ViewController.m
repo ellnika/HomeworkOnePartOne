@@ -18,9 +18,10 @@
 
 - (IBAction)printTextToConsole:(id)sender {
     
-    NSString *someText=_textFieldOne.text;
+    NSString *someText=self.textFieldOne.text;
+    NSString *capitalText=[someText uppercaseString];
     
-    NSLog(@"%@", someText);
+    NSLog(@"%@", capitalText);
     
 }
 - (IBAction)clearTextInput:(id)sender {
