@@ -10,12 +10,27 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textFieldOne;
+
 @end
 
 @implementation ViewController
 
+- (IBAction)printTextToConsole:(id)sender {
+    
+    NSString *someText=_textFieldOne.text;
+    
+    NSLog(@"%@", someText);
+    
+}
+- (IBAction)clearTextInput:(id)sender {
+    self.textFieldOne.text=@"";
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.textFieldOne.layer.borderWidth=4.0;
     // Do any additional setup after loading the view, typically from a nib.
 }
 

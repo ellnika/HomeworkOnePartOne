@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,45 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94l-CT-f4s">
+                                <rect key="frame" x="271" y="285" width="59" height="30"/>
+                                <state key="normal" title="Click me"/>
+                                <connections>
+                                    <action selector="printTextToConsole:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VAN-NA-YxT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type something here" borderStyle="roundedRect" placeholder="Type something here" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lNH-Jh-XUa">
+                                <rect key="frame" x="225" y="205" width="151" height="30"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE7-1V-GsL">
+                                <rect key="frame" x="389" y="285" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearTextInput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="flc-cx-QcN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lNH-Jh-XUa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JEE-yN-c2E"/>
+                            <constraint firstItem="94l-CT-f4s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="O2j-9O-fM6"/>
+                            <constraint firstItem="94l-CT-f4s" firstAttribute="top" secondItem="lNH-Jh-XUa" secondAttribute="bottom" constant="50" id="atj-cT-agg"/>
+                            <constraint firstItem="iE7-1V-GsL" firstAttribute="top" secondItem="lNH-Jh-XUa" secondAttribute="bottom" constant="50" id="u43-i3-Bg9"/>
+                            <constraint firstItem="iE7-1V-GsL" firstAttribute="leading" secondItem="94l-CT-f4s" secondAttribute="trailing" constant="59" id="xHz-ao-Zde"/>
+                            <constraint firstItem="94l-CT-f4s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xkf-ut-Src"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldOne" destination="lNH-Jh-XUa" id="nDq-RJ-k7y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="418" y="219"/>
         </scene>
     </scenes>
 </document>
